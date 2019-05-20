@@ -1,0 +1,166 @@
+/*
+COLORS:
+
+#FAFAFA          - Background
+#
+White            - 
+DarkSlateGray    - text
+MediumAquamarine - inactive link
+MediumSeaGreen   - hovered link
+*/
+
+/********************************** GENERAL ***********************************/
+
+html {
+  color: DarkSlateGray;
+  background-color: #FAFAFA;
+  font-family: Lato, sans-serif;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+@media (max-width: 420px) {
+  body {
+    background-color: SkyBlue;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #222222;
+  color: #FAFAFA;
+  padding: 1rem 0;
+}
+
+main {
+  flex: 1;
+  align-self: center;
+  width: 60%;
+}
+@media (max-width: 768px) {
+  main {
+    width: 70%;
+  }
+}
+@media (max-width: 420px) {
+  main {
+    width: 100%;
+    /* margin: 30px 30px; */
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #222222;
+  color: #FAFAFA;
+  padding: 1rem 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: MediumAquamarine;
+  text-decoration: none;
+}
+a:hover {
+  color: MediumSeaGreen;
+}
+
+time {
+  color: Gray;
+}
+
+/********************************** MEETUP ************************************/
+
+.meetup-item {
+  margin-top: 16px;
+  background-color: white;
+  padding: 10px 14px;
+  border: 1px solid #D9D9D9;
+}
+
+.meetup-item time {
+  margin-right: 8px;
+}
+
+.meetup-item-details > h1 {
+  margin: 4px 0 6px 0;
+}
+
+.meetup-item-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .meetup-item-body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.meetup-item .button {
+  align-self: flex-end;
+}
+
+.meetup-item-thumbnail {
+  margin-right: 16px;
+}
+.meetup-item-thumbnail img {
+  /* border: 4px solid MediumSeaGreen; */
+}
+
+.meetup-item-details > p {
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meetup-item-details {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: flex-start;
+}
+
+.meetup-item-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/********************************** HELPERS ***********************************/
+
+.button {
+  position: relative;
+  background-color: MediumAquamarine;
+  padding: 5px;
+  color: White;
+  border-bottom: 4px solid MediumSeaGreen;
+  border-radius: 2px;
+}
+.button:hover {
+  color: White;
+  background-color: MediumSeaGreen;
+  top: 1px;
+  border-bottom: 3px solid SeaGreen;
+  margin-bottom: 1px;
+}

@@ -31,7 +31,7 @@ router.post('/:id/attendees', (req, res, next) => {
       m.attendees.push(newAttendee)
     }
   })
-  return res.redirect(`/meetups/${id}`)
+  return res.redirect(`/meetups/${id}#attendees`)
 })
 
 router.get('/:id', (req, res, next) => {

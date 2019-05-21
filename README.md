@@ -1,7 +1,6 @@
 ```
 TODO:
-* Add responsiveness
-* Add manifest
+* ...
 ```
 
 ## Image Upload

@@ -59,15 +59,20 @@ main {
   align-self: center;
   width: 60%;
 }
+@media (max-width: 1024px) {
+  main {
+    width: 80%;
+  }
+}
 @media (max-width: 768px) {
   main {
-    width: 70%;
+    width: 90%;
   }
 }
 @media (max-width: 420px) {
   main {
-    width: 100%;
-    /* margin: 30px 30px; */
+    width: auto;
+    margin: 0 16px;
   }
 }
 
@@ -105,9 +110,27 @@ address {
 input:focus  { outline: none; }
 button:focus { outline: none; }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #FEFEFE;
+}
+tbody tr:nth-child(odd) {
+  background-color: #ecf2f9;
+}
+
 /******************************* MEETUP LIST **********************************/
 
 .meetup-item {
+  box-sizing: border-box;
   margin-top: 16px;
   padding: 14px;
   background-color: white;
@@ -127,6 +150,10 @@ button:focus { outline: none; }
   margin: 4px 0 6px 0;
 }
 
+.meetup-item-details > p {
+  margin-bottom: 10px;
+}
+
 .meetup-item-body {
   display: flex;
   flex-direction: row;
@@ -135,7 +162,6 @@ button:focus { outline: none; }
 
 @media (max-width: 768px) {
   .meetup-item-body {
-    display: flex;
     flex-direction: column;
   }
 }
@@ -147,11 +173,19 @@ button:focus { outline: none; }
 .meetup-item-thumbnail {
   margin-right: 16px;
 }
-
 @media (max-width: 768px) {
   .meetup-item-thumbnail {
     align-self: center;
     margin-bottom: 14px;
+  }
+}
+
+.meetup-item-thumbnail img {
+  width: 300px;
+}
+@media (max-width: 768px) {
+  .meetup-item-thumbnail img {
+    width: 200px;
   }
 }
 
@@ -166,29 +200,13 @@ button:focus { outline: none; }
   align-content: space-between;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  text-align: left;
-  padding: 8px;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #FEFEFE;
-}
-tbody tr:nth-child(odd) {
-  background-color: #ecf2f9;
-}
-
 .meetup-item-footer {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto; /* Sticks it to the bottom */
 }
 
 /****************************** MEETUP DETAILS ********************************/
@@ -197,6 +215,11 @@ tbody tr:nth-child(odd) {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  #details-header {
+    flex-direction: column;
+  }
 }
 
 #details-header-info {
@@ -255,6 +278,13 @@ tbody tr:nth-child(odd) {
   border-top: none;
   border-right: none;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  #details-header > form > button {
+    float: none;
+    width: 100%;
+    padding: 12px 30px;
+  }
 }
 
 .login-control {

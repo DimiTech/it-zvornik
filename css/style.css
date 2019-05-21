@@ -1,12 +1,11 @@
 /*
 COLORS:
 
-#FAFAFA          - Background
-#
+#F9F9F9          - Background
 White            - 
-DarkSlateGray    - text
-MediumAquamarine - inactive link
-MediumSeaGreen   - hovered link
+DarkSlateGray    - Text
+MediumAquamarine - Inactive link
+MediumSeaGreen   - Hovered link
 */
 
 /********************************** GENERAL ***********************************/
@@ -27,20 +26,8 @@ body {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  body {
-    /* background-color: lightblue; */
-  }
-}
-@media (max-width: 420px) {
-  body {
-    /* background-color: SkyBlue; */
-  }
-}
-
 header {
   display: flex;
-  padding: 0rem 2rem;
   justify-content: center;
   align-items: center;
   background-color: White;
@@ -112,14 +99,14 @@ time {
 
 .meetup-item {
   margin-top: 16px;
-  background-color: white;
   padding: 14px;
+  background-color: white;
   border: 1px solid #EEE;
   border-left: 10px solid #EEE;
 }
+
 .upcoming {
-  border: 1px solid MediumAquamarine;
-  border-left: 10px solid MediumAquamarine;
+  border-color: MediumAquamarine;
 }
 
 .meetup-item time {
@@ -167,7 +154,6 @@ time {
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  align-items: flex-start;
 }
 
 .meetup-item-footer {
@@ -183,7 +169,7 @@ time {
 .button {
   position: relative;
   background-color: MediumAquamarine;
-  padding: 5px;
+  padding: 6px 18px;
   color: White;
   border-bottom: 4px solid MediumSeaGreen;
   border-radius: 2px;

@@ -1,10 +1,19 @@
 ```
 TODO:
+* Add link on logo
 * Check HTML for validity
 * Optimize images
 * Add the proper Favicon
 * Add manifest
+* Add responsiveness
 ```
+
+## Image Upload
+
+When adding new images (either for `thumbnail` or for the detail page `hero image`)
+make sure that the image is in `3:2` aspect ratio!
+
+Ideal thumbnail image size is **300x200**.
 
 ## Map Display Hack
 

@@ -1,2 +1,18 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<main>
+  <h2>Upcoming meetups:</h2>
+
+  {{#each meetups.upcoming}}
+    <section class="meetup-item upcoming">
+      {{> components/meetup_item}}
+    </section>
+  {{/each}}
+
+  <h2>Past meetups:</h2>
+
+  {{#each meetups.past}}
+    <section class="meetup-item">
+      {{> components/meetup_item}}
+    </section>
+  {{/each}}
+
+</main>

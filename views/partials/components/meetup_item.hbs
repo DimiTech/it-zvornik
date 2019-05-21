@@ -1,0 +1,40 @@
+<div class="meetup-item-body">
+  {{#if this.thumbnail}}
+  <div class="meetup-item-thumbnail">
+    <a href="/meetups/{{this.id}}">
+      <img src="/img/posters/{{this.thumbnail}}" alt="{{this.title}} thumbnail image">
+    </a>
+  </div>
+  {{/if}}
+  <div class="meetup-item-details">
+    <div class="date-and-time">
+      <time datetime="{{this.date}}">
+        <i class="far fa-calendar-alt"></i>
+        <span>{{this.dateFormatted}}</span>
+      </time>
+      <time datetime="{{this.time}}">
+        <i class="far fa-clock"></i>
+        <span>{{this.time}}</span>
+      </time>
+    </div>
+    <h2>
+      <a href="/meetups/{{this.id}}">
+        {{this.title}}
+      </a>
+    </h2>
+    <p>
+      {{this.summary}}
+    </p>
+    <div class="meetup-item-footer">
+      <a href="/meetups/{{this.id}}#attendees">
+        <i class="fas fa-check-circle"></i>
+        {{#if this.upcoming}}
+        <span>{{this.attendeeCount}} Attendees</span>
+        {{else}}
+        <span>{{this.attendeeCount}} Attended</span>
+        {{/if}}
+      </a>
+      <a href="/meetups/{{this.id}}" class="button">Details</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<main>
+  <section id="details-header">
+    <div id="details-header-info">
+      <h2>{{meetup.title}}</h2>
+
+      <h3 class="date-and-time">
+        <time datetime="{{meetup.date}}">
+          <i class="far fa-calendar-alt"></i>
+          <span>{{meetup.dateFormatted}}</span>
+        </time>
+        <time datetime="{{meetup.time}}">
+          <i class="far fa-clock"></i>
+          <span>{{meetup.time}}</span>
+        </time>
+      </h3>
+
+      <address>
+        <a href="#details-map">
+          <div class="details-location-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="details-location-address">
+            <span>{{meetup.location.name}}</span>
+            <span>{{meetup.location.address}}</span>
+          </div>
+        </a>
+      </address>
+    </div>
+
+    <form id="attendance-form" action="/meetups/{{meetup.id}}/attendees" method="POST">
+      {{#if meetup.upcoming}}
+      <input id="email" name="email" type="email" placeholder="Your email" required spellcheck="false">
+      <button type="submit" class="button">
+        <i class="fas fa-check"></i>
+        I'm Coming!
+      </button>
+      {{else}}
+      <input disabled id="email" name="email" type="email" placeholder="Registration is over">
+      <button disabled type="submit" class="button">
+        <i class="fas fa-check"></i>
+        I'm Coming!
+      </button>
+      {{/if}}
+    </form>
+
+  </section>
+
+  {{#if meetup.poster}}
+  <div id="details-hero-image">
+    <img src="/img/posters/{{meetup.poster}}" alt="poster for meetup">
+  </div>
+  {{/if}}
+
+  <section id="details-text">
+    <h3>Details</h3>
+    <p>
+      {{{meetup.details}}}
+      <!-- TODO: This can be a security risk -->
+    </p>
+  </section>
+
+  <section id="attendees">
+    <h3>Attendees ({{meetup.attendeeCount}})</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Sign up date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each meetup.attendees}}
+          <tr>
+            <td>{{this.email}}</td>
+            <td>{{this.signUpDate}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+
+  <section id="details-map">
+    <h3>Location</h3>
+    <iframe
+      id="map-iframe"
+      src="{{meetup.googleMapsEmbedLink}}"
+    >
+    </iframe>
+  </section>
+
+</main>

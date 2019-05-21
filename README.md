@@ -1,10 +1,7 @@
 ```
 TODO:
-* Check HTML for validity
-* Optimize images
-* Add the proper Favicon
-* Add manifest
 * Add responsiveness
+* Add manifest
 ```
 
 ## Image Upload

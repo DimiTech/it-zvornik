@@ -53,7 +53,7 @@ router.get('/:id', (req, res, next) => {
       time          : new Date(meetup.datetime).toISOString().split('T')[1].replace(/\:\d{2}\.\d+Z$/, ''),
       attendeeCount : meetup.attendees.length,
       attendees     : meetup.attendees
-        .sort((a1, a2) => +(new Date(a1.datetime)) < +(new Date(a2.datetime)))
+        .sort((a1, a2) => +(new Date(a1.signUpTimestamp)) < +(new Date(a2.signUpTimestamp)))
         .map(a => {
           a.signUpDate = createLocalizedDateString(new Date(a.signUpTimestamp))
           return a

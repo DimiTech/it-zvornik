@@ -43,6 +43,13 @@ router.get('/:id', (req, res, next) => {
   if (!meetup) {
     return next(createError(404))
   }
+  attendees = meetup
+    .attendees.sort((a1, a2) => new Date(a2.signUpTimestamp) - new Date(a1.signUpTimestamp))
+    .map(a => {
+      a.signUpDate = createLocalizedDateString(new Date(a.signUpTimestamp))
+      return a
+    })
+  console.log(attendees)
   const viewModel = {
     title: 'IT Zvornik | ' + meetup.title,
     meetup: {
@@ -53,7 +60,7 @@ router.get('/:id', (req, res, next) => {
       time          : new Date(meetup.datetime).toISOString().split('T')[1].replace(/\:\d{2}\.\d+Z$/, ''),
       attendeeCount : meetup.attendees.length,
       attendees     : meetup.attendees
-        .sort((a1, a2) => +(new Date(a1.signUpTimestamp)) < +(new Date(a2.signUpTimestamp)))
+        .sort((a1, a2) => new Date(a2.signUpTimestamp) - new Date(a1.signUpTimestamp))
         .map(a => {
           a.signUpDate = createLocalizedDateString(new Date(a.signUpTimestamp))
           return a

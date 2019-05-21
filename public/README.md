@@ -1,8 +1,3 @@
-```
-TODO:
-* ...
-```
-
 ## Image Upload
 
 When adding new images (either for `thumbnail` or for the detail page `hero image`)

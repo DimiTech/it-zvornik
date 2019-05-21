@@ -19,6 +19,7 @@ router.post('/:id/attendees', (req, res, next) => {
   if (!req.body.email) {
     return next(createError(422))
   }
+  // TODO: email is not validated -> this is a security risk
   const newAttendee = {
     email: body.email,
     signUpTimestamp: (new Date()).toISOString()

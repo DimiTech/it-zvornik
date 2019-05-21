@@ -1,6 +1,5 @@
 ```
 TODO:
-* Add link on logo
 * Check HTML for validity
 * Optimize images
 * Add the proper Favicon
